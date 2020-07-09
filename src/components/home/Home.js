@@ -14,14 +14,20 @@ function Home() {
     getMovies();
     // eslint-disable-next-line
   }, []);
+
+  let moviesToShow;
+
+  if (movies !== null && movies !== undefined)
+    moviesToShow = movies.slice(0, 8);
+
   return (
     <Fragment>
-      <div className="my-2">
+      <div className="my-3">
         <Search />
       </div>
       <section>
-        <h2>Popular Movies</h2>
-        <Movies movies={movies} loadingMovies={loadingMovies} />
+        <h2 className="mb-1">Popular Movies</h2>
+        <Movies movies={moviesToShow} loadingMovies={loadingMovies} />
       </section>
     </Fragment>
   );

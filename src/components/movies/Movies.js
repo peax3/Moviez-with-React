@@ -1,6 +1,6 @@
 import React from "react";
 
-import Card from "../card/Card";
+import MovieCard from "../card/MovieCard";
 import Spinner from "../spinner/Spinner";
 
 function Movies({ movies, loadingMovies }) {
@@ -13,11 +13,10 @@ function Movies({ movies, loadingMovies }) {
   }
 
   return (
-    <div>
-      {/* {movies.map((movie) => (
-        <Card movie={movie} key={movie.id} />
-      ))} */}
-      working
+    <div className="movies">
+      {movies.map((movie) => (
+        <MovieCard movie={movie} key={movie.id} />
+      ))}
     </div>
   );
 }

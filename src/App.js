@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import "./App.css";
 
 import Navbar from "./components/navbar/Navbar";
@@ -9,10 +9,12 @@ import MovieState from "./context/movies/MovieState";
 function App() {
   return (
     <MovieState>
-      <div className="container">
+      <Fragment>
         <Navbar />
-        <Home />
-      </div>
+        <div className="container px-1">
+          <Home />
+        </div>
+      </Fragment>
     </MovieState>
   );
 }

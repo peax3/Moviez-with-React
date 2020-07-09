@@ -66,6 +66,12 @@
   margin: 0 auto;
 }
 
+.btn {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
 ul {
   list-style: none;
 }
@@ -96,21 +102,52 @@ a {
   border: 1px solid #ccc;
 }
 
-.btn {
-  cursor: pointer;
-  border: none;
-  outline: none;
-}
-
 .btn-search {
   position: absolute;
   top: 0;
   right: 0;
   height: 3.125rem;
+  border-radius: 0 3rem 3rem 0;
   width: 5rem;
   background-color: blue;
   color: wheat;
   font-size: 1rem;
+}
+
+.movie-card {
+  background-color: #022534;
+  color: #e4f5ff;
+}
+
+.movie-card img {
+  width: 100%;
+}
+
+.movie-card .movie-info {
+  padding: 0.7rem 0.5rem;
+}
+
+.movie-card .movie-info div {
+  display: flex;
+  margin-bottom: 0.7rem;
+}
+
+.movie-card .movie-info div span:first-of-type {
+  width: 75%;
+  align-self: flex-start;
+}
+
+.movie-card .movie-info div span:last-of-type {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: max-content;
+  column-gap: 2rem;
+  row-gap: 2rem;
 }
 
 @media screen and (min-width: 1000px) {
