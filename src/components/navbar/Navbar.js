@@ -13,20 +13,20 @@ function Navbar(props) {
 
 const MoviesNav = () => (
   <ul>
-    <li className="nav-dropdown">
-      <Link to="/movies">Movies</Link>
-      <ul>
+    <li>
+      Movies
+      <ul className="nav-dropdown">
         <li>
           <Link to="/movies/popular">Popular</Link>
         </li>
         <li>
-          <Link to="/movies/now-playing">Now Playing</Link>
+          <Link to="/movies/now_playing">Now Playing</Link>
         </li>
         <li>
-          <Link to="/movies/top-rated">Top Rated</Link>
+          <Link to="/movies/top_rated">Top Rated</Link>
         </li>
         <li>
-          <Link to="upcoming">Upcoming</Link>
+          <Link to="/movies/upcoming">Upcoming</Link>
         </li>
       </ul>
     </li>
