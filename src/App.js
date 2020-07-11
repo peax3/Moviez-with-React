@@ -5,6 +5,7 @@ import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import HomePage from "./components/homePage/HomePage";
 import MoviesPage from "./components/movies/MoviesPage";
+import MoviePage from "./components/movies/MoviePage";
 
 import * as ROUTES from "./routes/Routes";
 
@@ -18,7 +19,11 @@ function App() {
         <div className="container px-1">
           <Switch>
             <Route exact path={ROUTES.HOME} component={HomePage} />
-            <Route path={`${ROUTES.MOVIES}/:filter`} component={MoviesPage} />
+            <Route
+              path={`${ROUTES.MOVIES}/:filter(popular|top_rated|upcoming|now_playing)`}
+              component={MoviesPage}
+            />
+            <Route exact path={`${ROUTES.MOVIES}/:id`} component={MoviePage} />
           </Switch>
         </div>
       </Fragment>

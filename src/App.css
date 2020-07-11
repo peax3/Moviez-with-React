@@ -49,6 +49,11 @@
   padding-right: 1.2rem;
 }
 
+.px-2 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .p-1 {
   padding: 1.2rem;
 }
@@ -185,9 +190,25 @@ a {
   row-gap: 2rem;
 }
 
+.movie > .right > .additional-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.genres span + span {
+  margin-left: 2rem;
+}
+
 @media screen and (min-width: 1000px) {
   .primary-nav ul {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .movie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
