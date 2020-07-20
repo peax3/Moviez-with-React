@@ -5,18 +5,18 @@ import { CardImage, CardBody } from "./card";
 
 import * as ROUTES from "../../routes/Routes";
 
-function MovieCard({ movie }) {
-  const { id, title, vote_average, release_date, poster_path } = movie;
+function TvCard({ tv }) {
+  const { id, name, first_air_date, vote_average, poster_path } = tv;
 
   return (
     <div className="movie-card">
-      <Link to={`${ROUTES.MOVIES}/${id}`}>
+      <Link to={`${ROUTES.TV}/${id}`}>
         <CardImage poster={poster_path} alt="movie poster" />
       </Link>
 
-      <CardBody title={title} votes={vote_average} date={release_date} />
+      <CardBody title={name} votes={vote_average} date={first_air_date} />
     </div>
   );
 }
 
-export default MovieCard;
+export default TvCard;

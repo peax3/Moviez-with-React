@@ -7,9 +7,32 @@ function Navbar(props) {
     <nav className="container primary-nav p-1">
       <h1 className="logo">{title}</h1>
       <MoviesNav />
+      <TvNav />
     </nav>
   );
 }
+
+const TvNav = () => (
+  <ul>
+    <li>
+      Tv Shows
+      <ul className="nav-dropdown">
+        <li>
+          <Link to="/tv/popular">Popular</Link>
+        </li>
+        <li>
+          <Link to="/tv/now_playing">Airing Today</Link>
+        </li>
+        <li>
+          <Link to="/tv/top_rated">Top Rated</Link>
+        </li>
+        <li>
+          <Link to="/tv/upcoming">On Tv</Link>
+        </li>
+      </ul>
+    </li>
+  </ul>
+);
 
 const MoviesNav = () => (
   <ul>

@@ -163,21 +163,21 @@ a {
   width: 100%;
 }
 
-.movie-card .movie-info {
+.movie-card .card-body {
   padding: 0.7rem 0.5rem;
 }
 
-.movie-card .movie-info div {
+.movie-card .card-body div {
   display: flex;
   margin-bottom: 0.7rem;
 }
 
-.movie-card .movie-info div span:first-of-type {
+.movie-card .card-body div span:first-of-type {
   width: 75%;
   align-self: flex-start;
 }
 
-.movie-card .movie-info div span:last-of-type {
+.movie-card .card-body div span:last-of-type {
   margin-left: auto;
   margin-right: auto;
 }
