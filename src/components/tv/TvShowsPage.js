@@ -5,7 +5,6 @@ import TvContext from "../../context/tv/tvContext";
 import TvShows from "./TvShows";
 
 function TvShowsPage({ match }) {
-  console.log(match);
   const tvContext = useContext(TvContext);
   const { tvShows, loadingTV, getTvShows } = tvContext;
 

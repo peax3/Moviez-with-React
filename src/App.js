@@ -6,6 +6,7 @@ import Navbar from "./components/navbar/Navbar";
 import HomePage from "./components/homePage/HomePage";
 import MoviesPage from "./components/movies/MoviesPage";
 import MoviePage from "./components/movies/MoviePage";
+import TvShowsPage from "./components/tv/TvShowsPage";
 
 import * as ROUTES from "./routes/Routes";
 
@@ -31,6 +32,21 @@ function App() {
                 component={MoviePage}
               />
               <Route exact path={`ROUTES.TV`} />
+              <Route
+                exact
+                path={`${ROUTES.TV}/:filter`}
+                render={({ match }) => {
+                  const { filter } = match.params;
+                  if (
+                    filter === "popular" ||
+                    filter === "airing_today" ||
+                    filter === "top_rated" ||
+                    filter === "on_the_air"
+                  ) {
+                    return <TvShowsPage match={match} />;
+                  }
+                }}
+              />
             </Switch>
           </div>
         </Fragment>

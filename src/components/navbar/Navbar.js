@@ -21,13 +21,13 @@ const TvNav = () => (
           <Link to="/tv/popular">Popular</Link>
         </li>
         <li>
-          <Link to="/tv/now_playing">Airing Today</Link>
+          <Link to="/tv/airing_today">Airing Today</Link>
         </li>
         <li>
           <Link to="/tv/top_rated">Top Rated</Link>
         </li>
         <li>
-          <Link to="/tv/upcoming">On Tv</Link>
+          <Link to="/tv/on_the_air">On Tv</Link>
         </li>
       </ul>
     </li>
