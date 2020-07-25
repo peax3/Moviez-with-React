@@ -41,6 +41,8 @@ function TvState(props) {
 
     const data = await res.json();
 
+    console.log(data);
+
     dispatch({
       type: GET_TV_SHOW,
       payload: data,

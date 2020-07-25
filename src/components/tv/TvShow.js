@@ -10,7 +10,9 @@ function TvShow({ match }) {
   const { getTvShow, tvShow, loadingTV } = tvContext;
 
   useEffect(() => {
-    getTvShow(match.params.id);
+    const listener = getTvShow(match.params.filter);
+
+    return () => listener();
     // eslint-disable-next-line
   }, []);
 
@@ -23,17 +25,16 @@ function TvShow({ match }) {
   }
 
   const {
-    tagline,
     backdrop_path,
-    original_title,
     vote_average,
-    budget,
     genres, // is an Array
     overview,
     poster_path,
-    revenue,
-    release_date,
-    runtime,
+    name,
+    episode_run_time,
+    first_air_date,
+    number_of_episodes,
+    number_of_seasons,
   } = tvShow;
 
   return (
@@ -49,9 +50,8 @@ function TvShow({ match }) {
         <div className="right px-2">
           <div className="title mb-2">
             <h2>
-              {original_title} <span>{vote_average}</span>
+              {name} <span>{vote_average}</span>
             </h2>
-            <p>{tagline}</p>
           </div>
 
           <div className="overview mb-2">
@@ -66,18 +66,18 @@ function TvShow({ match }) {
 
           <div className="additional-info">
             <div>
-              <h3>Duration</h3>
-              <span>{runtime}</span>
+              <h3>Run Time</h3>
+              <span>{episode_run_time}</span>
             </div>
 
             <div>
-              <h3>Budget</h3>
-              <span>{budget}</span>
+              <h3>Seasons</h3>
+              <span>{`${number_of_seasons} Seasons`}</span>
             </div>
 
             <div>
-              <h3>Revenue</h3>
-              <span>{revenue}</span>
+              <h3>Episdodes</h3>
+              <span>{`${number_of_episodes} Episodes`}</span>
             </div>
           </div>
         </div>

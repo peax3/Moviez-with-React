@@ -12,6 +12,7 @@ import * as ROUTES from "./routes/Routes";
 
 import MovieState from "./context/movies/MovieState";
 import TvState from "./context/tv/TvState";
+import TvShow from "./components/tv/TvShow";
 
 function App() {
   return (
@@ -44,6 +45,8 @@ function App() {
                     filter === "on_the_air"
                   ) {
                     return <TvShowsPage match={match} />;
+                  } else {
+                    return <TvShow match={match} />;
                   }
                 }}
               />
