@@ -1,18 +1,18 @@
 import React, { useContext, Fragment, useEffect } from "react";
 
 import Spinner from "../spinner/Spinner";
+import Actors from "../actor/Actors";
 
 import TvContext from "../../context/tv/tvContext";
 
 function TvShow({ match }) {
   const tvContext = useContext(TvContext);
 
-  const { getTvShow, tvShow, loadingTV } = tvContext;
+  const { getTvShow, tvShow, loadingTV, getTvActors, tvActors } = tvContext;
 
   useEffect(() => {
-    const listener = getTvShow(match.params.filter);
-
-    return () => listener();
+    getTvShow(match.params.filter);
+    getTvActors(match.params.filter);
     // eslint-disable-next-line
   }, []);
 
@@ -82,6 +82,8 @@ function TvShow({ match }) {
           </div>
         </div>
       </div>
+
+      <Actors actors={tvActors} />
     </Fragment>
   );
 }

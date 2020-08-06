@@ -1,16 +1,24 @@
 import React, { useContext, Fragment, useEffect } from "react";
 
 import Spinner from "../spinner/Spinner";
+import Actors from "../actor/Actors";
 
 import MoviesContext from "../../context/movies/moviesContext";
 
 function MoviePage({ match }) {
   const moviesContext = useContext(MoviesContext);
 
-  const { getMovie, movie, loadingMovies } = moviesContext;
+  const {
+    getMovie,
+    movie,
+    loadingMovies,
+    getMovieActors,
+    movieActors,
+  } = moviesContext;
 
   useEffect(() => {
     getMovie(match.params.id);
+    getMovieActors(match.params.id);
     // eslint-disable-next-line
   }, []);
 
@@ -82,6 +90,8 @@ function MoviePage({ match }) {
           </div>
         </div>
       </div>
+
+      <Actors actors={movieActors} />
     </Fragment>
   );
 }

@@ -1,4 +1,9 @@
-import { SET_LOADING_TV, GET_TV_SHOWS, GET_TV_SHOW } from "../types";
+import {
+  SET_LOADING_TV,
+  GET_TV_SHOWS,
+  GET_TV_SHOW,
+  GET_TV_ACTORS,
+} from "../types";
 
 export default (state, action) => {
   switch (action.type) {
@@ -20,6 +25,12 @@ export default (state, action) => {
         ...state,
         tvShows: action.payload,
         loadingTV: false,
+      };
+
+    case GET_TV_ACTORS:
+      return {
+        ...state,
+        tvActors: action.payload,
       };
 
     default:

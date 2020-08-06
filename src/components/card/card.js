@@ -1,10 +1,10 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 export function CardImage({ poster, alt }) {
   return (
     <img
       src={`http://image.tmdb.org/t/p/w500/${poster}`}
-      alt={`alt`}
+      alt={alt}
       className="card-image"
     />
   );

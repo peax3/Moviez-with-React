@@ -5,7 +5,6 @@ import MoviesContext from "../../context/movies/moviesContext";
 import Movies from "./Movies";
 
 function MoviesPage({ match }) {
-  console.log(match);
   const moviesContext = useContext(MoviesContext);
   const { movies, loadingMovies, getMovies } = moviesContext;
 

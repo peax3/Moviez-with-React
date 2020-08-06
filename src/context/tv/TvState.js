@@ -3,13 +3,19 @@ import React, { useReducer } from "react";
 import tvContext from "./tvContext";
 import tvReducer from "./tvReducer";
 
-import { SET_LOADING_TV, GET_TV_SHOWS, GET_TV_SHOW } from "../types";
+import {
+  SET_LOADING_TV,
+  GET_TV_SHOWS,
+  GET_TV_SHOW,
+  GET_TV_ACTORS,
+} from "../types";
 
 const INITIAL_STATE = {
   loadingTV: false,
   tvShows: null,
   tvShow: null,
   text: "",
+  tvActors: null,
 };
 
 function TvState(props) {
@@ -36,16 +42,27 @@ function TvState(props) {
     setLoading();
 
     const res = await fetch(
-      `https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.REACT_APP_REACT_MOVIEZ_KEY}`
+      `https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.REACT_APP_REACT_MOVIEZ_KEY}&language=en-US`
     );
 
     const data = await res.json();
 
-    console.log(data);
-
     dispatch({
       type: GET_TV_SHOW,
       payload: data,
+    });
+  };
+
+  const getTvActors = async (id) => {
+    const res = await fetch(
+      `https://api.themoviedb.org/3/tv/${id}/credits?api_key=${process.env.REACT_APP_REACT_MOVIEZ_KEY}`
+    );
+
+    const data = await res.json();
+
+    dispatch({
+      type: GET_TV_ACTORS,
+      payload: data.cast,
     });
   };
 
@@ -55,8 +72,10 @@ function TvState(props) {
         loadingTV: state.loadingTV,
         tvShow: state.tvShow,
         tvShows: state.tvShows,
+        tvActors: state.tvActors,
         getTvShow,
         getTvShows,
+        getTvActors,
       }}
     >
       {props.children}

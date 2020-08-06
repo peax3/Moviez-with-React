@@ -2,12 +2,18 @@ import React, { useReducer } from "react";
 import movieContext from "./moviesContext";
 import movieReducer from "./moviesReducer";
 
-import { SET_LOADING_MOVIES, GET_MOVIES, GET_MOVIE } from "../types";
+import {
+  SET_LOADING_MOVIES,
+  GET_MOVIES,
+  GET_MOVIE,
+  GET_MOVIE_ACTORS,
+} from "../types";
 
 const INITIAL_STATE = {
   loadingMovies: false,
   movies: null,
   movie: null,
+  movieActors: null,
 };
 
 function MovieState(props) {
@@ -45,14 +51,29 @@ function MovieState(props) {
     });
   };
 
+  const getMovieActors = async (id) => {
+    const res = await fetch(
+      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_REACT_MOVIEZ_KEY}`
+    );
+
+    const data = await res.json();
+
+    dispatch({
+      type: GET_MOVIE_ACTORS,
+      payload: data.cast,
+    });
+  };
+
   return (
     <movieContext.Provider
       value={{
         loadingMovies: state.loadingMovies,
         movies: state.movies,
         movie: state.movie,
+        movieActors: state.movieActors,
         getMovies,
         getMovie,
+        getMovieActors,
       }}
     >
       {props.children}

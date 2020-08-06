@@ -1,4 +1,9 @@
-import { SET_LOADING_MOVIES, GET_MOVIES, GET_MOVIE } from "../types";
+import {
+  SET_LOADING_MOVIES,
+  GET_MOVIES,
+  GET_MOVIE,
+  GET_MOVIE_ACTORS,
+} from "../types";
 
 export default (state, action) => {
   switch (action.type) {
@@ -20,6 +25,12 @@ export default (state, action) => {
       return {
         ...state,
         loadingMovies: true,
+      };
+
+    case GET_MOVIE_ACTORS:
+      return {
+        ...state,
+        movieActors: action.payload,
       };
 
     default:

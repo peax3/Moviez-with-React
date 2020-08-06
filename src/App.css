@@ -200,6 +200,14 @@ a {
   margin-left: 2rem;
 }
 
+.actors {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: max-content;
+  column-gap: 2rem;
+  row-gap: 2rem;
+}
+
 @media screen and (min-width: 1000px) {
   .primary-nav ul {
     margin-left: auto;
