@@ -3,6 +3,7 @@ import {
   GET_MOVIES,
   GET_MOVIE,
   GET_MOVIE_ACTORS,
+  GET_TOTAL_PAGES_MOVIES,
 } from "../types";
 
 export default (state, action) => {
@@ -31,6 +32,12 @@ export default (state, action) => {
       return {
         ...state,
         movieActors: action.payload,
+      };
+
+    case GET_TOTAL_PAGES_MOVIES:
+      return {
+        ...state,
+        totalPages: action.payload,
       };
 
     default:

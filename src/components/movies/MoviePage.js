@@ -17,8 +17,8 @@ function MoviePage({ match }) {
   } = moviesContext;
 
   useEffect(() => {
-    getMovie(match.params.id);
-    getMovieActors(match.params.id);
+    getMovie(match.params.filter);
+    getMovieActors(match.params.filter);
     // eslint-disable-next-line
   }, []);
 

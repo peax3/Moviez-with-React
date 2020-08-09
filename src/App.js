@@ -24,13 +24,21 @@ function App() {
             <Switch>
               <Route exact path={ROUTES.HOME} component={HomePage} />
               <Route
-                path={`${ROUTES.MOVIES}/:filter(popular|top_rated|upcoming|now_playing)`}
-                component={MoviesPage}
-              />
-              <Route
                 exact
-                path={`${ROUTES.MOVIES}/:id`}
-                component={MoviePage}
+                path={`${ROUTES.MOVIES}/:filter`}
+                render={({ match, history }) => {
+                  const { filter } = match.params;
+                  if (
+                    filter === "popular" ||
+                    filter === "top_rated" ||
+                    filter === "upcoming" ||
+                    filter === "now_playing"
+                  ) {
+                    return <MoviesPage match={match} history={history} />;
+                  } else {
+                    return <MoviePage match={match} />;
+                  }
+                }}
               />
               <Route exact path={`ROUTES.TV`} />
               <Route

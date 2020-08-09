@@ -7,11 +7,13 @@ import {
   GET_MOVIES,
   GET_MOVIE,
   GET_MOVIE_ACTORS,
+  GET_TOTAL_PAGES_MOVIES,
 } from "../types";
 
 const INITIAL_STATE = {
   loadingMovies: false,
   movies: null,
+  totalPages: 1,
   movie: null,
   movieActors: null,
 };
@@ -33,6 +35,11 @@ function MovieState(props) {
     dispatch({
       type: GET_MOVIES,
       payload: data.results,
+    });
+
+    dispatch({
+      type: GET_TOTAL_PAGES_MOVIES,
+      payload: data.total_pages,
     });
   };
 
@@ -71,6 +78,7 @@ function MovieState(props) {
         movies: state.movies,
         movie: state.movie,
         movieActors: state.movieActors,
+        totalPages: state.totalPages,
         getMovies,
         getMovie,
         getMovieActors,
