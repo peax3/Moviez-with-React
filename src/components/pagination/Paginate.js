@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { Fragment } from "react";
 
 const range = (from, to, step = 1) => {
   let i = from;
@@ -11,15 +11,12 @@ const range = (from, to, step = 1) => {
   return pageNumbers;
 };
 
-const Paginate = ({ totalPages, paginateFunc, presentPage, pageNeighbors }) => {
-  const [currentPage, setCurrentPage] = useState(presentPage);
+const Paginate = ({ totalPages, paginateFunc, currentPage, pageNeighbors }) => {
   /**
    * LEFT_PAGE, RIGHT_PAGE: to indicate points where we have page controls for moving left and right respectively
    */
   const LEFT_PAGE = "LEFT";
   const RIGHT_PAGE = "RIGHT";
-
-  // const [currentPage, setCurrentPage] = useState(presentPage);
 
   /**
    * pageNeighbors indicates the number of additional page numbers to be shown on each side of the current page. The minimum value is 2. if not specified, it defaults to 0.
@@ -43,6 +40,8 @@ const Paginate = ({ totalPages, paginateFunc, presentPage, pageNeighbors }) => {
      */
     if (totalPages > totalBlocks) {
       const startPage = Math.max(2, currentPage - pageNeighbors);
+      // const endPage = Math.min(totalPages - 1, currentPage + pageNeighbors);
+
       const endPage = Math.min(totalPages - 1, currentPage + pageNeighbors);
 
       let pages = range(startPage, endPage);
@@ -62,6 +61,7 @@ const Paginate = ({ totalPages, paginateFunc, presentPage, pageNeighbors }) => {
         case hasLeftSpill && !hasRightSpill: {
           const extraPages = range(startPage - spillOffset, startPage - 1);
           pages = [LEFT_PAGE, ...extraPages, ...pages];
+          console.log("has spill left");
           break;
         }
 
@@ -69,6 +69,7 @@ const Paginate = ({ totalPages, paginateFunc, presentPage, pageNeighbors }) => {
         case !hasLeftSpill && hasRightSpill: {
           const extraPages = range(endPage + 1, endPage + spillOffset);
           pages = [...pages, ...extraPages, RIGHT_PAGE];
+          console.log("has spill right");
           break;
         }
 
@@ -76,6 +77,7 @@ const Paginate = ({ totalPages, paginateFunc, presentPage, pageNeighbors }) => {
         case hasLeftSpill && hasRightSpill:
         default: {
           pages = [LEFT_PAGE, ...pages, RIGHT_PAGE];
+          console.log("has default");
           break;
         }
       }
@@ -89,7 +91,6 @@ const Paginate = ({ totalPages, paginateFunc, presentPage, pageNeighbors }) => {
 
   const gotoPage = (page) => {
     const currentPage = Math.max(0, Math.min(page, totalPages));
-    setCurrentPage(currentPage);
     paginateFunc(currentPage);
   };
 
@@ -97,6 +98,7 @@ const Paginate = ({ totalPages, paginateFunc, presentPage, pageNeighbors }) => {
     e.preventDefault();
     gotoPage(currentPage - pageNeighbors * 2 - 1);
   };
+
   const handleMoveRight = (e) => {
     e.preventDefault();
     gotoPage(currentPage + pageNeighbors * 2 + 1);

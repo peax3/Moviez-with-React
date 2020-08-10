@@ -8,6 +8,8 @@ import MoviesContext from "../../context/movies/moviesContext";
 function MoviePage({ match }) {
   const moviesContext = useContext(MoviesContext);
 
+  console.log(match);
+
   const {
     getMovie,
     movie,
@@ -17,8 +19,8 @@ function MoviePage({ match }) {
   } = moviesContext;
 
   useEffect(() => {
-    getMovie(match.params.filter);
-    getMovieActors(match.params.filter);
+    getMovie(match.params.id);
+    getMovieActors(match.params.id);
     // eslint-disable-next-line
   }, []);
 

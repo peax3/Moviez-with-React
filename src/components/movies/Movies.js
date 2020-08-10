@@ -4,13 +4,13 @@ import MovieCard from "../card/MovieCard";
 import Spinner from "../spinner/Spinner";
 
 function Movies({ movies, loadingMovies }) {
-  if (loadingMovies) {
-    return <Spinner />;
-  }
+  // if (loadingMovies) {
+  //   return <Spinner />;
+  // }
 
-  if (movies === null || movies === undefined) {
-    return null;
-  }
+  // if (movies === null || movies === undefined) {
+  //   return null;
+  // }
 
   return (
     <div className="movies">

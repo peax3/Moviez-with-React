@@ -6,6 +6,7 @@ import TvContext from "../../context/tv/tvContext";
 import Search from "../search/Search";
 import Movies from "../movies/Movies";
 import TvShows from "../tv/TvShows";
+import Spinner from "../spinner/Spinner";
 
 function Home() {
   const movieContext = useContext(MovieContext);
@@ -21,6 +22,10 @@ function Home() {
 
     // eslint-disable-next-line
   }, []);
+
+  if (movies === null || movies === undefined) {
+    return null;
+  }
 
   let moviesToShow;
 
@@ -38,7 +43,11 @@ function Home() {
       </div>
       <section>
         <h2 className="mb-1">Popular Movies</h2>
-        <Movies movies={moviesToShow} loadingMovies={loadingMovies} />
+        {moviesToShow !== null && !loadingMovies ? (
+          <Movies movies={moviesToShow} loadingMovies={loadingMovies} />
+        ) : (
+          <Spinner />
+        )}
       </section>
 
       <section>

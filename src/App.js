@@ -3,16 +3,17 @@ import { Switch, Route } from "react-router-dom";
 import "./App.css";
 
 import Navbar from "./components/navbar/Navbar";
+
 import HomePage from "./components/homePage/HomePage";
 import MoviesPage from "./components/movies/MoviesPage";
 import MoviePage from "./components/movies/MoviePage";
 import TvShowsPage from "./components/tv/TvShowsPage";
+import TvShow from "./components/tv/TvShow";
 
 import * as ROUTES from "./routes/Routes";
 
 import MovieState from "./context/movies/MovieState";
 import TvState from "./context/tv/TvState";
-import TvShow from "./components/tv/TvShow";
 
 function App() {
   return (
@@ -23,24 +24,19 @@ function App() {
           <div className="container px-1">
             <Switch>
               <Route exact path={ROUTES.HOME} component={HomePage} />
+
               <Route
                 exact
-                path={`${ROUTES.MOVIES}/:filter`}
-                render={({ match, history }) => {
-                  const { filter } = match.params;
-                  if (
-                    filter === "popular" ||
-                    filter === "top_rated" ||
-                    filter === "upcoming" ||
-                    filter === "now_playing"
-                  ) {
-                    return <MoviesPage match={match} history={history} />;
-                  } else {
-                    return <MoviePage match={match} />;
-                  }
-                }}
+                path={`${ROUTES.MOVIES}/:filter(popular|now_playing|top_rated|upcoming)/:page?`}
+                component={MoviesPage}
               />
-              <Route exact path={`ROUTES.TV`} />
+
+              <Route
+                path={`${ROUTES.MOVIES}/:id`}
+                exact
+                component={MoviePage}
+              />
+
               <Route
                 exact
                 path={`${ROUTES.TV}/:filter`}

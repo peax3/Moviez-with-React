@@ -227,7 +227,7 @@ a {
   justify-content: center;
 }
 
-.pagination-nav ul li {
+.pagination-nav ul li button {
   border: 1px solid black;
 }
 
