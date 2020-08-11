@@ -23,7 +23,7 @@ function Home() {
     // eslint-disable-next-line
   }, []);
 
-  if (movies === null || movies === undefined) {
+  if (movies === null || tvShows === null) {
     return null;
   }
 
@@ -44,7 +44,7 @@ function Home() {
       <section>
         <h2 className="mb-1">Popular Movies</h2>
         {moviesToShow !== null && !loadingMovies ? (
-          <Movies movies={moviesToShow} loadingMovies={loadingMovies} />
+          <Movies movies={moviesToShow} />
         ) : (
           <Spinner />
         )}
@@ -52,7 +52,11 @@ function Home() {
 
       <section>
         <h2 className="my-2">Popular Tv Shows</h2>
-        <TvShows tvShows={tvToShow} loadingTV={loadingTV} />
+        {tvToShow !== null && !loadingTV ? (
+          <TvShows tvShows={tvToShow} />
+        ) : (
+          <Spinner />
+        )}
       </section>
     </Fragment>
   );

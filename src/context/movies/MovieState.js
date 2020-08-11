@@ -37,9 +37,13 @@ function MovieState(props) {
       payload: data.results,
     });
 
+    getTotalPages(data.total_pages);
+  };
+
+  const getTotalPages = (pages) => {
     dispatch({
       type: GET_TOTAL_PAGES_MOVIES,
-      payload: data.total_pages,
+      payload: pages,
     });
   };
 

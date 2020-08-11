@@ -3,6 +3,7 @@ import {
   GET_TV_SHOWS,
   GET_TV_SHOW,
   GET_TV_ACTORS,
+  GET_TOTAL_PAGES_MOVIES,
 } from "../types";
 
 export default (state, action) => {
@@ -25,6 +26,12 @@ export default (state, action) => {
         ...state,
         tvShows: action.payload,
         loadingTV: false,
+      };
+
+    case GET_TOTAL_PAGES_MOVIES:
+      return {
+        ...state,
+        totalPages: action.payload,
       };
 
     case GET_TV_ACTORS:

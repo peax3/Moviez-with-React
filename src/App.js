@@ -39,21 +39,11 @@ function App() {
 
               <Route
                 exact
-                path={`${ROUTES.TV}/:filter`}
-                render={({ match }) => {
-                  const { filter } = match.params;
-                  if (
-                    filter === "popular" ||
-                    filter === "airing_today" ||
-                    filter === "top_rated" ||
-                    filter === "on_the_air"
-                  ) {
-                    return <TvShowsPage match={match} />;
-                  } else {
-                    return <TvShow match={match} />;
-                  }
-                }}
+                path={`${ROUTES.TV}/:filter(popular|airing_today|top_rated|on_the_air)/:page?`}
+                component={TvShowsPage}
               />
+
+              <Route path={`${ROUTES.TV}/:id`} exact component={TvShow} />
             </Switch>
           </div>
         </Fragment>

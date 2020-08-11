@@ -18,16 +18,16 @@ const TvNav = () => (
       Tv Shows
       <ul className="nav-dropdown">
         <li>
-          <Link to="/tv/popular">Popular</Link>
+          <Link to="/tv/popular/1">Popular</Link>
         </li>
         <li>
-          <Link to="/tv/airing_today">Airing Today</Link>
+          <Link to="/tv/airing_today/1">Airing Today</Link>
         </li>
         <li>
-          <Link to="/tv/top_rated">Top Rated</Link>
+          <Link to="/tv/top_rated/1">Top Rated</Link>
         </li>
         <li>
-          <Link to="/tv/on_the_air">On Tv</Link>
+          <Link to="/tv/on_the_air/1">On Tv</Link>
         </li>
       </ul>
     </li>
@@ -43,13 +43,13 @@ const MoviesNav = () => (
           <Link to="/movies/popular/1">Popular</Link>
         </li>
         <li>
-          <Link to="/movies/now_playing">Now Playing</Link>
+          <Link to="/movies/now_playing/1">Now Playing</Link>
         </li>
         <li>
-          <Link to="/movies/top_rated">Top Rated</Link>
+          <Link to="/movies/top_rated/1">Top Rated</Link>
         </li>
         <li>
-          <Link to="/movies/upcoming">Upcoming</Link>
+          <Link to="/movies/upcoming/1">Upcoming</Link>
         </li>
       </ul>
     </li>

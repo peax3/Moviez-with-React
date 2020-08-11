@@ -8,6 +8,7 @@ import {
   GET_TV_SHOWS,
   GET_TV_SHOW,
   GET_TV_ACTORS,
+  GET_TOTAL_PAGES_MOVIES,
 } from "../types";
 
 const INITIAL_STATE = {
@@ -16,6 +17,7 @@ const INITIAL_STATE = {
   tvShow: null,
   text: "",
   tvActors: null,
+  totalPages: 1,
 };
 
 function TvState(props) {
@@ -35,6 +37,15 @@ function TvState(props) {
     dispatch({
       type: GET_TV_SHOWS,
       payload: data.results,
+    });
+
+    getTotalPages(data.total_pages);
+  };
+
+  const getTotalPages = (pages) => {
+    dispatch({
+      type: GET_TOTAL_PAGES_MOVIES,
+      payload: pages,
     });
   };
 
@@ -73,6 +84,7 @@ function TvState(props) {
         tvShow: state.tvShow,
         tvShows: state.tvShows,
         tvActors: state.tvActors,
+        totalPages: state.totalPages,
         getTvShow,
         getTvShows,
         getTvActors,
