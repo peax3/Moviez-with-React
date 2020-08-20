@@ -69,7 +69,6 @@ const Paginate = ({ totalPages, paginateFunc, currentPage, pageNeighbors }) => {
         case !hasLeftSpill && hasRightSpill: {
           const extraPages = range(endPage + 1, endPage + spillOffset);
           pages = [...pages, ...extraPages, RIGHT_PAGE];
-          console.log("has spill right");
           break;
         }
 

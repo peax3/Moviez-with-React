@@ -3,7 +3,7 @@ import React from "react";
 export function CardImage({ poster, alt }) {
   return (
     <img
-      src={`http://image.tmdb.org/t/p/w500/${poster}`}
+      src={`http://image.tmdb.org/t/p/w300/${poster}`}
       alt={alt}
       className="card-image"
     />

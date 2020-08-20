@@ -11,8 +11,8 @@ function TvShow({ match }) {
   const { getTvShow, tvShow, loadingTV, getTvActors, tvActors } = tvContext;
 
   useEffect(() => {
-    getTvShow(match.params.filter);
-    getTvActors(match.params.filter);
+    getTvShow(match.params.id);
+    getTvActors(match.params.id);
     // eslint-disable-next-line
   }, []);
 
