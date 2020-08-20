@@ -61,7 +61,6 @@ const Paginate = ({ totalPages, paginateFunc, currentPage, pageNeighbors }) => {
         case hasLeftSpill && !hasRightSpill: {
           const extraPages = range(startPage - spillOffset, startPage - 1);
           pages = [LEFT_PAGE, ...extraPages, ...pages];
-          console.log("has spill left");
           break;
         }
 
@@ -76,7 +75,7 @@ const Paginate = ({ totalPages, paginateFunc, currentPage, pageNeighbors }) => {
         case hasLeftSpill && hasRightSpill:
         default: {
           pages = [LEFT_PAGE, ...pages, RIGHT_PAGE];
-          console.log("has default");
+
           break;
         }
       }

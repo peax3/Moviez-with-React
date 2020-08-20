@@ -8,8 +8,6 @@ import MoviesContext from "../../context/movies/moviesContext";
 function MoviePage({ match }) {
   const moviesContext = useContext(MoviesContext);
 
-  console.log(match);
-
   const {
     getMovie,
     movie,
