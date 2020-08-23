@@ -8,7 +8,7 @@ import Movies from "../movies/Movies";
 import TvShows from "../tv/TvShows";
 import Spinner from "../spinner/Spinner";
 
-function Home() {
+function Home(props) {
   const movieContext = useContext(MovieContext);
   const tvContext = useContext(TvContext);
 
@@ -38,9 +38,6 @@ function Home() {
 
   return (
     <Fragment>
-      <div className="my-3">
-        <Search />
-      </div>
       <section>
         <h2 className="mb-1">Popular Movies</h2>
         {moviesToShow !== null && !loadingMovies ? (

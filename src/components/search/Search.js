@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 
+import { useHistory } from "react-router-dom";
+
 const INITIAL_STATE = {
   text: "",
 };
 
-function Search() {
+function Search(props) {
   const [state, setState] = useState(INITIAL_STATE);
-
+  const history = useHistory();
   const { text } = state;
 
   const isInvalid = text.trim() === "";
@@ -16,12 +18,18 @@ function Search() {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log(text);
+    history.push(`/search/movie?query=${text}`);
   };
 
   return (
     <form onSubmit={onSubmit} className="search-form">
-      <input type="text" name="text" value={text} onChange={onChange} />
+      <input
+        type="text"
+        name="text"
+        value={text}
+        onChange={onChange}
+        placeholder="search for..."
+      />
       <button disabled={isInvalid} className="btn btn-search">
         Search
       </button>

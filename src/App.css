@@ -244,6 +244,47 @@ a {
   background-color: aquamarine;
 }
 
+.search-nav {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.search-nav li {
+  position: relative;
+}
+
+.search-nav li button {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.search-nav li button::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: blue;
+  display: none;
+}
+
+.search-nav li .active::before,
+.search-nav li button:hover::before {
+  display: block;
+}
+
+.search-nav li .active,
+.search-nav li button:hover {
+  color: blue;
+}
+
+.search-nav li + li {
+  margin-left: 1rem;
+}
+
 @media screen and (min-width: 1000px) {
   .primary-nav ul {
     margin-left: auto;
