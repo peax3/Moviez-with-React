@@ -3,7 +3,6 @@ import React, { Fragment, useContext, useEffect } from "react";
 import MovieContext from "../../context/movies/moviesContext";
 import TvContext from "../../context/tv/tvContext";
 
-import Search from "../search/Search";
 import Movies from "../movies/Movies";
 import TvShows from "../tv/TvShows";
 import Spinner from "../spinner/Spinner";

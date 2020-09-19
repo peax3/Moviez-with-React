@@ -6,7 +6,7 @@ const INITIAL_STATE = {
   text: "",
 };
 
-function Search(props) {
+function SearchForm(props) {
   const [state, setState] = useState(INITIAL_STATE);
   const history = useHistory();
   const { text } = state;
@@ -37,4 +37,4 @@ function Search(props) {
   );
 }
 
-export default Search;
+export default SearchForm;

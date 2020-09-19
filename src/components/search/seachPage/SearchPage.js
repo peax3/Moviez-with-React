@@ -30,6 +30,8 @@ const SearchPage = (props) => {
 
   useEffect(() => {
     getSearchResults(query, currentPage);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query, currentPage]);
 
   const clickHandler = (e) => {

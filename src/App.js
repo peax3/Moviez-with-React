@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
 
-import Navbar from "./components/navbar/Navbar";
+import Navbar from "./components/navigation/Navbar";
 
 import HomePage from "./components/homePage/HomePage";
 import MoviesPage from "./components/movies/MoviesPage";
@@ -10,7 +10,7 @@ import MoviePage from "./components/movies/MoviePage";
 import TvShowsPage from "./components/tv/TvShowsPage";
 import TvShow from "./components/tv/TvShow";
 import SearchPage from "./components/search/seachPage/SearchPage";
-import Search from "./components/search/Search";
+import SearchForm from "./components/search/SearchForm";
 
 import * as ROUTES from "./routes/Routes";
 
@@ -27,7 +27,7 @@ function App() {
             <Navbar />
             <div className="container px-1">
               <div className="my-3">
-                <Search />
+                <SearchForm />
               </div>
               <Switch>
                 <Route exact path={ROUTES.HOME} component={HomePage} />

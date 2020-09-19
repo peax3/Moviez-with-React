@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-import spinnerImg from "./spinner.gif";
+import spinnerImg from "../../assets/images/spinner.gif";
 
 function Spinner() {
   return (
