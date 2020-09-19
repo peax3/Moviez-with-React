@@ -1,16 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Hamburger from "./hamburger/Hamburger";
 
 function Navbar(props) {
-  const { title } = props;
   return (
     <nav className="container primary-nav p-1">
-      <h1 className="logo">{title}</h1>
+      <Hamburger />
+      <Logo />
       <MoviesNav />
       <TvNav />
     </nav>
   );
 }
+
+const Logo = (props) => {
+  return <h1 className="logo">{props.title}</h1>;
+};
+
+Logo.defaultProps = {
+  title: "REACT MOVIEZ",
+};
 
 const TvNav = () => (
   <ul>
@@ -56,8 +65,5 @@ const MoviesNav = () => (
   </ul>
 );
 
-Navbar.defaultProps = {
-  title: "REACT MOVIEZ",
-};
-
+export { MoviesNav, TvNav, Logo };
 export default Navbar;

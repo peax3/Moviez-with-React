@@ -17,6 +17,7 @@ import * as ROUTES from "./routes/Routes";
 import MovieState from "./context/movies/MovieState";
 import TvState from "./context/tv/TvState";
 import SearchState from "./context/search/SearchState";
+import SideNav from "./components/navigation/sideNav/SideNav";
 
 function App() {
   return (
@@ -24,7 +25,9 @@ function App() {
       <TvState>
         <SearchState>
           <Fragment>
+            <SideNav />
             <Navbar />
+
             <div className="container px-1">
               <div className="my-3">
                 <SearchForm />
