@@ -2,11 +2,11 @@ import React, { Fragment } from "react";
 import Backdrop from "../backdrop/Backdrop";
 import { Logo, MoviesNav, TvNav } from "../Navbar";
 
-const SideNav = () => {
+const SideNav = (props) => {
   return (
     <Fragment>
-      <Backdrop />
-      <nav className="side-nav">
+      <Backdrop show={props.show} clicked={props.hide} />
+      <nav className={`side-nav ${props.show ? "show" : "hide"}`}>
         <Logo />
         <MoviesNav />
         <TvNav />

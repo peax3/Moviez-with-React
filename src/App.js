@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { useState, Fragment } from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
 
@@ -20,13 +20,23 @@ import SearchState from "./context/search/SearchState";
 import SideNav from "./components/navigation/sideNav/SideNav";
 
 function App() {
+  const [showSideNav, setShowSideNav] = useState(false);
+
+  const showSideNavHandler = () => {
+    setShowSideNav(!showSideNav);
+  };
+
+  const closeShowSideNav = () => {
+    setShowSideNav(false);
+  };
+
   return (
     <MovieState>
       <TvState>
         <SearchState>
           <Fragment>
-            <SideNav />
-            <Navbar />
+            <SideNav show={showSideNav} hide={closeShowSideNav} />
+            <Navbar hamburgerToggle={showSideNavHandler} />
 
             <div className="container px-1">
               <div className="my-3">

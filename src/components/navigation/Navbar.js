@@ -5,7 +5,7 @@ import Hamburger from "./hamburger/Hamburger";
 function Navbar(props) {
   return (
     <nav className="container primary-nav p-1">
-      <Hamburger />
+      <Hamburger clicked={props.hamburgerToggle} />
       <Logo />
       <MoviesNav />
       <TvNav />
