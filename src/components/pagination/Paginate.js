@@ -24,7 +24,7 @@ const Paginate = ({ totalPages, paginateFunc, currentPage, pageNeighbors }) => {
    */
   pageNeighbors =
     typeof pageNeighbors === "number"
-      ? Math.max(0, Math.min(pageNeighbors, 3))
+      ? Math.max(0, Math.min(pageNeighbors, 2))
       : 0;
 
   const fetchPageNumbers = () => {
@@ -119,7 +119,7 @@ const Paginate = ({ totalPages, paginateFunc, currentPage, pageNeighbors }) => {
                       className={`btn btn-transparent btn-link`}
                       onClick={handleMoveLeft}
                     >
-                      <span>&laquo;</span> <span>Previous</span>
+                      <span>&laquo;</span> <span>Prev</span>
                     </button>
                   </li>
                 );

@@ -1,9 +1,42 @@
+:root {
+  --dark-color: #142936;
+  --dark-blue-color: #094f6e;
+  --light-blue-color: #2d7a9c;
+  --lighter-blue-color: #96c7d5;
+  --bright-color: #f2f6f8;
+  --white-color: #fff;
+  --green-color: rgb(103, 175, 109);
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: Lato, sans-serif;
+  color: var(--dark-color);
+  font-weight: 400;
+}
+
+.logo {
+  font-family: "Ranchers", cursive;
+  letter-spacing: 2px;
+  color: var(--white-color);
+}
+
+.hamburger i {
+  color: var(--white-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
 }
 
 .my-1 {
@@ -66,6 +99,10 @@
   padding: 3rem;
 }
 
+.pt-5 {
+  padding-top: 5rem;
+}
+
 .container {
   max-width: 1400px;
   margin: 0 auto;
@@ -93,7 +130,18 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: blue;
+  background-color: var(--dark-blue-color);
+  color: var(--lighter-blue-color);
+}
+
+.primary-nav .logo {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.no-link span {
+  display: block;
+  font-weight: 600;
 }
 
 .side-nav {
@@ -101,11 +149,36 @@ a {
   top: 0;
   left: 0;
   width: 250px;
-  max-width: 70%;
+  width: 70%;
   height: 100%;
-  background-color: blue;
+  background-color: var(--dark-blue-color);
   z-index: 100;
   transition: transform 0.3s ease-out;
+}
+
+.side-nav .no-link span {
+  color: var(--lighter-blue-color);
+  padding: 0.5rem 0 0.5rem 1.2rem;
+}
+
+.side-nav .no-link:hover span {
+  background-color: var(--light-blue-color);
+}
+
+.side-nav .nav-dropdown li a {
+  color: var(--bright-color);
+  display: block;
+  padding: 0.5rem 0 0.5rem 1.8rem;
+}
+
+.side-nav .nav-dropdown li:hover {
+  background-color: var(--lighter-blue-color);
+}
+
+.side-nav .logo {
+  margin-top: 1.2rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.2rem;
 }
 
 .side-nav.hide {
@@ -123,34 +196,12 @@ a {
 
 .primary-nav li a:hover,
 .side-nav li a:hover {
-  color: red;
+  /* color: red; */
+  color: #f64c72;
 }
 
-.primary-nav ul li {
-  display: block;
-  position: relative;
-}
-
-.primary-nav .nav-dropdown {
-  position: absolute;
-  background-color: #fff;
-  z-index: 1;
-  left: 0;
-  min-width: 12.5rem;
-  padding: 0.5rem 0;
+.primary-nav ul {
   display: none;
-}
-
-.primary-nav .nav-dropdown li + li {
-  margin-top: 0.5rem;
-}
-
-.primary-nav li:hover .nav-dropdown,
-.primary-nav li:focus-within > .nav-dropdown,
-.primary-nav li ul:hover {
-  opacity: 1;
-  visibility: visible;
-  display: block;
 }
 
 .side-nav .nav-dropdown {
@@ -173,11 +224,15 @@ a {
   font-size: 1.2rem;
   width: 100%;
   height: 3.125rem;
-  border-radius: 3rem;
+  border-radius: 0.3rem;
   outline: none;
   padding-left: 1.5rem;
   padding-right: 5.5rem;
   border: 1px solid #ccc;
+}
+
+.search-form input[type="text"]:focus {
+  border: 1px solid var(--green-color);
 }
 
 .btn-search {
@@ -185,20 +240,22 @@ a {
   top: 0;
   right: 0;
   height: 3.125rem;
-  border-radius: 0 3rem 3rem 0;
+  border-radius: 0 0.3rem 0.3rem 0;
   width: 5rem;
-  background-color: blue;
-  color: wheat;
+  background-color: var(--green-color);
+  color: var(--white-color);
   font-size: 1rem;
 }
 
 .movie-card {
   background-color: #022534;
   color: #e4f5ff;
+  border-radius: 0.5rem;
 }
 
 .movie-card img {
   width: 100%;
+  border-radius: 0.5rem 0.5rem 0 0;
 }
 
 .movie-card .card-body {
@@ -207,11 +264,12 @@ a {
 
 .movie-card .card-body div {
   display: flex;
+  justify-content: space-between;
   margin-bottom: 0.7rem;
 }
 
 .movie-card .card-body div span:first-of-type {
-  width: 75%;
+  width: 70%;
   align-self: flex-start;
 }
 
@@ -220,9 +278,25 @@ a {
   margin-right: auto;
 }
 
+.movie-card .date {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.votes {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+}
+
+.movie-card .votes i {
+  color: gold;
+  font-size: 0.7rem;
+  /* margin-right: 0.2rem; */
+}
+
 .movies {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   grid-auto-rows: max-content;
   column-gap: 2rem;
   row-gap: 2rem;
@@ -267,11 +341,11 @@ a {
 
 .pagination-nav ul li + li {
   /* border-left: 1px solid black; */
-  margin-left: 0.7rem;
+  margin-left: 0.5rem;
 }
 
 .btn-link {
-  padding: 0.5rem;
+  padding: 0.2rem;
 }
 
 .pagination-nav ul li.active {
@@ -329,10 +403,68 @@ a {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+@media screen and (min-width: 400px) {
+  .movies {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pagination-nav ul li + li {
+    margin-left: 0.2rem;
+  }
+
+  .btn-link {
+    padding: 0.5rem;
+  }
+}
+
 @media screen and (min-width: 1000px) {
+  .hamburger,
+  .backdrop,
+  .side-nav {
+    display: none;
+  }
+
+  .primary-nav ul {
+    display: block;
+  }
+
+  .primary-nav ul li {
+    display: block;
+    position: relative;
+  }
+
+  .primary-nav .nav-dropdown {
+    position: absolute;
+    background-color: #fff;
+    z-index: 1;
+    left: 0;
+    min-width: 12.5rem;
+    padding: 0.5rem 0;
+    display: none;
+  }
+
+  .primary-nav .logo {
+    margin: 0;
+  }
+
+  .primary-nav .nav-dropdown li + li {
+    margin-top: 0.5rem;
+  }
+
+  .primary-nav li:hover .nav-dropdown,
+  .primary-nav li:focus-within > .nav-dropdown,
+  .primary-nav li ul:hover {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+  }
   .primary-nav ul {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .movies {
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .movie {

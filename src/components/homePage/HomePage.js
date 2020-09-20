@@ -46,8 +46,8 @@ function Home(props) {
         )}
       </section>
 
-      <section>
-        <h2 className="my-2">Popular Tv Shows</h2>
+      <section className="pt-5">
+        <h2 className="mb-1">Popular Tv Shows</h2>
         {tvToShow !== null && !loadingTV ? (
           <TvShows tvShows={tvToShow} />
         ) : (

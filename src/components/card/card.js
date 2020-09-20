@@ -15,9 +15,12 @@ export function CardBody({ title, votes, date }) {
     <div className="card-body">
       <div>
         <span>{title}</span>
-        <span>{votes}</span>
+        <span className="votes">
+          <i className="fas fa-star"></i>
+          {votes}
+        </span>
       </div>
-      <span>{date}</span>
+      <span className="date">{date}</span>
     </div>
   );
 }

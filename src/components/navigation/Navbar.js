@@ -23,8 +23,10 @@ Logo.defaultProps = {
 
 const TvNav = () => (
   <ul>
-    <li>
-      Tv Shows
+    <li className="no-link">
+      <span role="button" tabIndex="0">
+        Tv Shows
+      </span>
       <ul className="nav-dropdown">
         <li>
           <Link to="/tv/popular/1">Popular</Link>
@@ -45,8 +47,10 @@ const TvNav = () => (
 
 const MoviesNav = () => (
   <ul>
-    <li>
-      Movies
+    <li className="no-link">
+      <span role="button" tabIndex="0">
+        Movies
+      </span>
       <ul className="nav-dropdown">
         <li>
           <Link to="/movies/popular/1">Popular</Link>

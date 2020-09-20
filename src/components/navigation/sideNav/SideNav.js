@@ -6,7 +6,7 @@ const SideNav = (props) => {
   return (
     <Fragment>
       <Backdrop show={props.show} clicked={props.hide} />
-      <nav className={`side-nav ${props.show ? "show" : "hide"}`}>
+      <nav className={`side-nav  ${props.show ? "show" : "hide"}`}>
         <Logo />
         <MoviesNav />
         <TvNav />
