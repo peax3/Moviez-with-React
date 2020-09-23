@@ -371,14 +371,15 @@ a {
   display: block;
 }
 
-.movie .right > .movie_heading {
-  /* text-align: center; */
-}
-
 .movie > .right .movie_additional-info {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.movie_genres div {
+  display: flex;
   flex-wrap: wrap;
 }
 
@@ -542,10 +543,6 @@ a {
   .movie .right {
     width: 75%;
     padding-left: 1.7rem;
-  }
-
-  .movie .right > .movie_heading {
-    /* text-align: left; */
   }
 
   .actors {

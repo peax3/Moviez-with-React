@@ -1,12 +1,12 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 const Genres = ({ genres }) => {
   return (
-    <Fragment>
+    <div>
       {genres.map((genre) => (
         <span key={genre.id}>{genre.name}</span>
       ))}
-    </Fragment>
+    </div>
   );
 };
 
