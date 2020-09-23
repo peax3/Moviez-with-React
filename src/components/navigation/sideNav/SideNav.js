@@ -8,8 +8,8 @@ const SideNav = (props) => {
       <Backdrop show={props.show} clicked={props.hide} />
       <nav className={`side-nav  ${props.show ? "show" : "hide"}`}>
         <Logo />
-        <MoviesNav />
-        <TvNav />
+        <MoviesNav closeSideNav={props.hide} />
+        <TvNav closeSideNav={props.hide} />
       </nav>
     </Fragment>
   );
