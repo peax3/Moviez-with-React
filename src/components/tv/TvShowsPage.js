@@ -31,7 +31,7 @@ function TvShowsPage({ match, history }) {
           <TvShows tvShows={tvShows} loadingMovies={loadingTV} />
           <Paginate
             totalPages={totalPages}
-            currentPage={Number(match.params.page)}
+            currentPage={Number(match.params.page) || 1}
             pageNeighbors={3}
             paginateFunc={handlePageChange}
           />

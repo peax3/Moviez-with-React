@@ -12,7 +12,8 @@ const SearchPage = (props) => {
   const params = useParams();
   const location = useLocation();
   const query = new URLSearchParams(location.search).get("query");
-  const currentPage = new URLSearchParams(location.search).get("page") || 1;
+  const currentPage =
+    Number(new URLSearchParams(location.search).get("page")) || 1;
   const history = useHistory();
 
   const searchContext = useContext(SearchContext);
@@ -137,7 +138,7 @@ const TvDisplay = ({ tvShows, totalPages, currentPage, handlePageChange }) => {
           <TvShows tvShows={tvShows} />
           <Paginate
             totalPages={totalPages}
-            currentPage={Number(currentPage)}
+            currentPage={currentPage}
             pageNeighbors={3}
             paginateFunc={handlePageChange}
           />
