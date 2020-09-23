@@ -14,7 +14,11 @@ function Navbar(props) {
 }
 
 const Logo = (props) => {
-  return <h1 className="logo">{props.title}</h1>;
+  return (
+    <h1 className="logo">
+      <Link to="/">{props.title}</Link>
+    </h1>
+  );
 };
 
 Logo.defaultProps = {

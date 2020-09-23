@@ -28,6 +28,10 @@ body {
   color: var(--white-color);
 }
 
+.logo a {
+  color: var(--white-color);
+}
+
 .hamburger i {
   color: var(--white-color);
 }
