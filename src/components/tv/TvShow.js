@@ -3,6 +3,7 @@ import moment from "moment";
 
 import Spinner from "../spinner/Spinner";
 import Actors from "../actor/Actors";
+import Genres from "../genres/Genres";
 
 import TvContext from "../../context/tv/tvContext";
 import { minutesToHM } from "../movies/MoviePage";
@@ -96,16 +97,6 @@ function TvShow({ match }) {
       </div>
 
       <Actors actors={tvActors} />
-    </Fragment>
-  );
-}
-
-function Genres({ genres }) {
-  return (
-    <Fragment>
-      {genres.map((genre) => (
-        <span key={genre.id}>{genre.name}</span>
-      ))}
     </Fragment>
   );
 }

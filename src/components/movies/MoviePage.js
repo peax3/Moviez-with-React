@@ -3,6 +3,7 @@ import moment from "moment";
 
 import Spinner from "../spinner/Spinner";
 import Actors from "../actor/Actors";
+import Genres from "../genres/Genres";
 
 import MoviesContext from "../../context/movies/moviesContext";
 
@@ -126,15 +127,5 @@ export const moneyFormatter = new Intl.NumberFormat("en-US", {
   currency: "USD",
   minimumFractionDigits: 2,
 });
-
-function Genres({ genres }) {
-  return (
-    <Fragment>
-      {genres.map((genre) => (
-        <span key={genre.id}>{genre.name}</span>
-      ))}
-    </Fragment>
-  );
-}
 
 export default MoviePage;
