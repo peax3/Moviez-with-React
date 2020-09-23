@@ -17,8 +17,6 @@ const SearchPage = (props) => {
 
   const searchContext = useContext(SearchContext);
 
-  console.log(currentPage);
-
   const {
     loading,
     getSearchResults,
@@ -68,10 +66,10 @@ const SearchPage = (props) => {
 
   return (
     <Fragment>
-      <p>
-        Search result for <span>{query}</span>
+      <p className="search-query mb-1">
+        Search result for <span>"{query}"</span>
       </p>
-      <ul className="search-nav">
+      <ul className="search-nav mb-1">
         <li>
           <button
             className={`btn btn-transparent ${

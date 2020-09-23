@@ -8,8 +8,13 @@ import * as ROUTES from "../../routes/Routes";
 
 function MovieCard({ movie }) {
   const { id, title, vote_average, release_date, poster_path } = movie;
-  const date = moment(release_date).format("MMM DD, YYYY");
+
+  const date = !release_date
+    ? null
+    : moment(release_date).format("MMM DD, YYYY");
+
   const votes = Number(vote_average).toFixed(1);
+
   return (
     <div className="movie-card">
       <Link to={`${ROUTES.MOVIES}/${id}`}>

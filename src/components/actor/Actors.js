@@ -27,12 +27,17 @@ const Actors = ({ actors }) => {
 
   return (
     <div className="actors-container">
-      <h2>Actors</h2>
+      <h2 className="mb-1">Actors</h2>
       {actors.length > 10 && (
-        <label htmlFor="show Actors">
-          showAllActors
-          <input type="checkbox" onClick={handleClick} />
-        </label>
+        <div className="control">
+          <div className="ball-checkbox">
+            show All
+            <input type="checkbox" onClick={handleClick} />
+            <label htmlFor="checkbox">
+              <div className="ball"></div>
+            </label>
+          </div>
+        </div>
       )}
 
       <div className="actors">

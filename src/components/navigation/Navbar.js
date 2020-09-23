@@ -21,23 +21,23 @@ Logo.defaultProps = {
   title: "REACT MOVIEZ",
 };
 
-const TvNav = () => (
+const TvNav = (props) => (
   <ul>
     <li className="no-link">
       <span role="button" tabIndex="0">
         Tv Shows
       </span>
       <ul className="nav-dropdown">
-        <li>
+        <li onClick={props.closeSideNav}>
           <Link to="/tv/popular/1">Popular</Link>
         </li>
-        <li>
+        <li onClick={props.closeSideNav}>
           <Link to="/tv/airing_today/1">Airing Today</Link>
         </li>
-        <li>
+        <li onClick={props.closeSideNav}>
           <Link to="/tv/top_rated/1">Top Rated</Link>
         </li>
-        <li>
+        <li onClick={props.closeSideNav}>
           <Link to="/tv/on_the_air/1">On Tv</Link>
         </li>
       </ul>
@@ -45,23 +45,23 @@ const TvNav = () => (
   </ul>
 );
 
-const MoviesNav = () => (
+const MoviesNav = (props) => (
   <ul>
     <li className="no-link">
       <span role="button" tabIndex="0">
         Movies
       </span>
       <ul className="nav-dropdown">
-        <li>
+        <li onClick={props.closeSideNav}>
           <Link to="/movies/popular/1">Popular</Link>
         </li>
-        <li>
+        <li onClick={props.closeSideNav}>
           <Link to="/movies/now_playing/1">Now Playing</Link>
         </li>
-        <li>
+        <li onClick={props.closeSideNav}>
           <Link to="/movies/top_rated/1">Top Rated</Link>
         </li>
-        <li>
+        <li onClick={props.closeSideNav}>
           <Link to="/movies/upcoming/1">Upcoming</Link>
         </li>
       </ul>

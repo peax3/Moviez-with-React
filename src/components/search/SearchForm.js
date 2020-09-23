@@ -28,7 +28,7 @@ function SearchForm(props) {
         name="text"
         value={text}
         onChange={onChange}
-        placeholder="search for..."
+        placeholder="search for movie, tv show..."
       />
       <button disabled={isInvalid} className="btn btn-search">
         Search

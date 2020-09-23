@@ -3,11 +3,10 @@ import React from "react";
 const ActorCardBody = ({ actorName, actorRole, NumOfEpisodes }) => {
   return (
     <div className="actor-body">
-      <span>{actorName}</span>
+      <h4>{actorName}</h4>
+      <span className="actor-role">{actorRole}</span>
       <br />
-      <span>{actorRole}</span>
-      <br />
-      <span>{NumOfEpisodes}</span>
+      <span className="actor-episodes">{NumOfEpisodes}</span>
     </div>
   );
 };
