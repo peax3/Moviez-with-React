@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
 
 import Navbar from "./components/navigation/Navbar";
@@ -70,6 +70,9 @@ function App() {
                   exact
                   component={SearchPage}
                 />
+                <Route>
+                  <Redirect to="/" />
+                </Route>
               </Switch>
             </div>
           </Fragment>
