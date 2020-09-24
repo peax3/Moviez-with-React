@@ -21,17 +21,29 @@ function SearchForm(props) {
     history.push(`/search/movie?query=${text}`);
   };
 
+  const clearSearchText = (event) => {
+    event.preventDefault();
+    setState({ ...state, text: "" });
+  };
+
   return (
     <form onSubmit={onSubmit} className="search-form">
       <input
         type="text"
         name="text"
+        className={`${text ? "active" : ""}`}
         value={text}
         onChange={onChange}
         placeholder="search for movie, tv show..."
       />
       <button disabled={isInvalid} className="btn btn-search">
         Search
+      </button>
+      <button
+        onClick={clearSearchText}
+        className={`btn btn-transparent btn-close ${text ? "active" : ""}`}
+      >
+        <i className="fas fa-times "></i>
       </button>
     </form>
   );

@@ -282,7 +282,7 @@ a {
   border-radius: 0.3rem;
   outline: none;
   padding-left: 1.5rem;
-  padding-right: 5.5rem;
+  padding-right: 7.5rem;
   border: 1px solid #ccc;
 }
 
@@ -300,6 +300,30 @@ a {
   background-color: var(--green-color);
   color: var(--white-color);
   font-size: 1rem;
+}
+
+.btn-close {
+  position: absolute;
+  top: 11px;
+  right: 90px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: rgb(131, 128, 128);
+  padding: 5px;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.btn-close:hover,
+.btn-close:focus {
+  background-color: rgba(204, 204, 204, 0.4);
+}
+
+.search-form input[type="text"].active ~ .btn-close {
+  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 .movie-card {
