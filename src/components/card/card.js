@@ -4,7 +4,9 @@ import no_image_icon from "../../assets/images/no-image-icon.jpg";
 export function CardImage({ poster, alt }) {
   return (
     <img
-      src={!poster ? no_image_icon : `http://image.tmdb.org/t/p/w300/${poster}`}
+      src={
+        !poster ? no_image_icon : `https://image.tmdb.org/t/p/w300/${poster}`
+      }
       alt={alt}
       className="card-image"
     />
