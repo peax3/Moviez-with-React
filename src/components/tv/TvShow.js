@@ -28,7 +28,6 @@ function TvShow({ match }) {
   }
 
   const {
-    backdrop_path,
     vote_average,
     genres, // is an Array
     overview,

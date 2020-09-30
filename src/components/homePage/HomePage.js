@@ -43,7 +43,7 @@ function Home(props) {
           Popular Movies{" "}
           <span>
             <Link to="/movies/popular">
-              View All <i class="fas fa-arrow-right"></i>
+              View All <i className="fas fa-arrow-right"></i>
             </Link>
           </span>
         </h2>
@@ -59,7 +59,7 @@ function Home(props) {
           Popular Tv Shows{" "}
           <span>
             <Link to="/tv/popular">
-              View All <i class="fas fa-arrow-right"></i>
+              View All <i className="fas fa-arrow-right"></i>
             </Link>
           </span>
         </h2>

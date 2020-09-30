@@ -34,7 +34,6 @@ function MoviePage({ match }) {
 
   const {
     tagline,
-    backdrop_path,
     original_title,
     vote_average,
     budget,
