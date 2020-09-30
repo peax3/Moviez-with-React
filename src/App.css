@@ -358,7 +358,7 @@ a {
 
 .movie-card img {
   width: 100%;
-  min-height: 345px;
+  min-height: 240px;
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
@@ -681,6 +681,10 @@ footer a:hover {
 
   .movies {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .movie-card img {
+    min-height: 345px;
   }
 
   .movie_img img {

@@ -45,6 +45,8 @@ function MoviePage({ match }) {
     runtime,
   } = movie;
 
+  console.log({ original_title, runtime });
+
   const date = moment(release_date).format("YYYY");
   const votes = Number(vote_average).toFixed(1);
 
