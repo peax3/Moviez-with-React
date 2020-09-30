@@ -1,4 +1,5 @@
 import React, { Fragment, useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import MovieContext from "../../context/movies/moviesContext";
 import TvContext from "../../context/tv/tvContext";
@@ -38,7 +39,14 @@ function Home(props) {
   return (
     <Fragment>
       <section>
-        <h2 className="mb-1">Popular Movies</h2>
+        <h2 className="mb-1 heading-w-link">
+          Popular Movies{" "}
+          <span>
+            <Link to="/movies/popular">
+              View All <i class="fas fa-arrow-right"></i>
+            </Link>
+          </span>
+        </h2>
         {moviesToShow !== null && !loadingMovies ? (
           <Movies movies={moviesToShow} />
         ) : (
@@ -47,7 +55,14 @@ function Home(props) {
       </section>
 
       <section className="pt-5">
-        <h2 className="mb-1">Popular Tv Shows</h2>
+        <h2 className="mb-1 heading-w-link">
+          Popular Tv Shows{" "}
+          <span>
+            <Link to="/tv/popular">
+              View All <i class="fas fa-arrow-right"></i>
+            </Link>
+          </span>
+        </h2>
         {tvToShow !== null && !loadingTV ? (
           <TvShows tvShows={tvToShow} />
         ) : (

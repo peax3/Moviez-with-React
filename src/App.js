@@ -18,6 +18,7 @@ import MovieState from "./context/movies/MovieState";
 import TvState from "./context/tv/TvState";
 import SearchState from "./context/search/SearchState";
 import SideNav from "./components/navigation/sideNav/SideNav";
+import Footer from "./components/footer/Footer";
 
 function App() {
   const [showSideNav, setShowSideNav] = useState(false);
@@ -38,7 +39,7 @@ function App() {
             <SideNav show={showSideNav} hide={closeShowSideNav} />
             <Navbar hamburgerToggle={showSideNavHandler} />
 
-            <div className="container px-1">
+            <div className="container main-body px-1">
               <div className="my-3">
                 <SearchForm />
               </div>
@@ -74,6 +75,7 @@ function App() {
                   <Redirect to="/" />
                 </Route>
               </Switch>
+              <Footer />
             </div>
           </Fragment>
         </SearchState>
