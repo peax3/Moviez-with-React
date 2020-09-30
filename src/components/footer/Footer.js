@@ -4,20 +4,24 @@ const Footer = () => {
   return (
     <footer className="footer">
       <p>
-        made with ❤ by{" "}
-        <a
-          href="https://github.com/peax3"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          peax3
-        </a>{" "}
+        <small>
+          made with ❤ by{" "}
+          <a
+            href="https://github.com/peax3"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            peax3
+          </a>
+        </small>
       </p>
       <p>
-        powered by{" "}
-        <a href="https://tmdb.org" target="_blank" rel="noopener noreferrer">
-          TMDB
-        </a>{" "}
+        <small>
+          powered by{" "}
+          <a href="https://tmdb.org" target="_blank" rel="noopener noreferrer">
+            TMDB
+          </a>
+        </small>
       </p>
     </footer>
   );
