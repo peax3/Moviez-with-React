@@ -1,4 +1,5 @@
 import React from "react";
+import no_image_icon from "../../assets/images/no-image-icon.jpg";
 
 const ActorCardBody = ({ actorName, actorRole, NumOfEpisodes }) => {
   return (
@@ -14,7 +15,9 @@ const ActorCardBody = ({ actorName, actorRole, NumOfEpisodes }) => {
 const ActorCardImage = ({ poster }) => {
   return (
     <img
-      src={`https://image.tmdb.org/t/p/w185/${poster}`}
+      src={
+        !poster ? no_image_icon : `https://image.tmdb.org/t/p/w185/${poster}`
+      }
       alt="actor"
       className="actor-image"
     />
